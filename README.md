@@ -1,9 +1,9 @@
-# rabbitmq_tools
-using for normal rabbitmq operation with java
+# 设计思路
 
-
-
-
+**Q: 为什么不使用官方集成好的消费者方法（诸如@RabbitListener,@RabbitHandler）？
+A: 官方的方法集成在Springboot里，启动消费者监听相当于启动了一个tomcat，占资源较高，
+本项目的设计思路是控制在独立线程进行监听（单独一个main方法），故可以起多个线程进行监控，资源占用小。
+且作为一个jar包，引用后可以随时调用。**
 
 
 ## Ubuntu Server配置固定ip ##
