@@ -1,8 +1,10 @@
 # 设计思路
 
-**Q: 为什么不使用官方集成好的消费者方法（诸如@RabbitListener,@RabbitHandler）？
-A: 官方的方法集成在Springboot里，启动消费者监听相当于启动了一个tomcat，占资源较高，
-本项目的设计思路是控制在独立线程进行监听（单独一个main方法），故可以起多个线程进行监控，资源占用小。
+**Q: 为什么不使用官方集成好的消费者方法（诸如@RabbitListener,@RabbitHandler）？**
+
+**A: 官方的方法集成在Springboot里，启动消费者监听相当于启动了一个tomcat，占资源较高，**
+
+**本项目的设计思路是控制在独立线程进行监听（单独一个main方法），故可以起多个线程进行监控，资源占用小。
 且作为一个jar包，引用后可以随时调用。**
 
 
@@ -52,5 +54,8 @@ VMWare版本： 15Pro
 查看防火墙状态ufw status
 
 可以远程使用root用户登陆 修改/etc/ssh下文件 sshd_config 将PermitRootLogin打开 后面更改为yes
+
+如果没有sshd_config，说明没安装Openssh服务 
+apt install -y openssh-server之后就有sshd_config文件了
 
 重启ssh /etc/init.d/ssh restart
